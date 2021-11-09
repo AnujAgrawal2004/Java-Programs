@@ -1,0 +1,22 @@
+package com.company;
+
+public class Class {
+    int n=10;
+    Class()
+    {
+        System.out.println("inside constructor");
+    }
+    static
+    {
+        System.out.println("inside static block");
+    }
+    public static void m1()
+    {
+        System.out.println(n);
+    }
+
+    public static void main(String[] args) {
+        Class obj=new Class();
+        Class.m1();
+    }
+}
