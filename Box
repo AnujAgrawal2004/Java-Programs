@@ -1,0 +1,23 @@
+package com.company;
+import java.util.Scanner;
+public class Box {
+    int l,b,h;
+    Box(int l,int b,int h)
+    {
+        this.l=l;
+        this.b=b;
+        this.h=h;
+    }
+    public int volume()
+    {
+        return l*b*h;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Enter the length,width,height respectively");
+        Scanner s=new Scanner(System.in);
+        Box obj=new Box(s.nextInt(),s.nextInt(),s.nextInt());
+        System.out.print("Volume of the box is ");
+        System.out.println(obj.volume());
+    }
+}
