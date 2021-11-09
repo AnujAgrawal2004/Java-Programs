@@ -1,0 +1,47 @@
+package com.company;
+import java.util.*;
+ class Book {
+    String name,author;
+    double price;
+    int qtyinStock;
+    Book(String name,double price,int qtyinStock,String author)
+    {
+        this.name=name;
+        this.price=price;
+        this.qtyinStock=qtyinStock;
+        this.author=author;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public int getQtyinStock() {
+        return qtyinStock;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+}
+class Author
+{
+    String author;
+}
+class Driver
+{
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter the name,price,quantity,author");
+        Book obj=new Book(s.nextLine(),s.nextDouble(),s.nextInt(),s.nextLine());
+        System.out.println(obj.getAuthor());
+        System.out.println(obj.getPrice());
+        System.out.println(obj.getName());
+        System.out.println(obj.getQtyinStock());
+
+    }
+}
