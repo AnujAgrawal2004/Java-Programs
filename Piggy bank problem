@@ -1,0 +1,30 @@
+package com.company;
+import java.util.*;
+public class AddAmount {
+    public int amount=50;
+    AddAmount()
+    {
+        System.out.println("Total money in piggy bank "+amount);
+    }
+    AddAmount(int money)
+    {
+        amount+=money;
+        System.out.println("Total money in piggy bank "+amount);
+    }
+
+    public static void main(String[] args) {
+        String choice=null;
+        Scanner s=new Scanner(System.in);
+        System.out.println("if you want to add money then enter yes otherwise no ");
+        choice=s.nextLine();
+        if(choice.equals("yes"))
+        {
+            System.out.println("Enter the money you want to add");
+            AddAmount obj1=new AddAmount(s.nextInt());
+        }
+        if(choice.equals("no"))
+        {
+            AddAmount obj2=new AddAmount();
+        }
+    }
+}
