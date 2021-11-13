@@ -1,0 +1,41 @@
+package com.company;
+import java.util.Scanner;
+public class Only1_4 {
+    int arr[];
+    void check_Element(int arr[])
+    {
+        int count=0;
+        for(int i=0;i< arr.length;i++)
+        {
+            if(arr[i]==1 ||arr[i]==4)
+            {
+                count+=1;
+            }
+            else
+            {
+                System.out.println("False");
+                break;
+            }
+        }
+        if(count== arr.length)
+        {
+            System.out.println("True");
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        int l=0;
+        System.out.println("Enter the length of array");
+        l=s.nextInt();
+
+        int a[]=new int[l];
+        System.out.println("Enter the array");
+        for(int i=0;i<a.length;i++)
+        {
+            a[i]=s.nextInt();
+        }
+        Only1_4 obj=new Only1_4();
+        obj.check_Element(a);
+    }
+}
