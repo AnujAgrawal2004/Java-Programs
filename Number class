@@ -88,6 +88,7 @@ public class Number {
     {
         boolean f6=false;
         int length=0;
+        int x3=n;
         int temp=n;
         int sum=0;
         int x=0;
@@ -97,11 +98,11 @@ public class Number {
             temp=temp/10;
             length++;
         }
-        while(n>0)
+        while(x3>0)
         {
-            x=n%10;
+            x=x3%10;
             sum = (int) (sum+ Math.pow(x, length));
-            n=n/10;
+            x3=x3/10;
         }
         if(sum==x2)
         {
@@ -146,11 +147,12 @@ public class Number {
 
     int sumDigits()
     {
+        int x4=n;
         int split=0;
-        while(n>0)
+        while(x4>0)
         {
-            split=split+(n%10);
-            n/=10;
+            split=split+(x4%10);
+            x4/=10;
         }
         System.out.print("The sum of digits of the given number is ");
         return split;
