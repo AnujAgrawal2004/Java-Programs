@@ -1,0 +1,36 @@
+package com.company;
+import java.util.Scanner;
+public class Ascii {
+    int[] arr;
+    Scanner s=new Scanner(System.in);
+
+    Ascii()
+    {
+        System.out.println("Enter the length of the array ");
+        arr =new int [s.nextInt()];
+    }
+    public void loop()
+    {
+        System.out.println("Enter character ascii of array");
+        for(int i=0;i<arr.length;i++)
+        {
+            arr[i]=s.nextInt();
+        }
+    }
+    public void ascii()
+    {
+        System.out.println("Character of given ascii ");
+
+        for(int j=0;j<arr.length;j++)
+        {
+            System.out.println((char) arr[j]);
+        }
+    }
+}
+class Main1{
+    public static void main(String[] args) {
+        Ascii obj=new Ascii();
+        obj.loop();
+        obj.ascii();
+    }
+}
