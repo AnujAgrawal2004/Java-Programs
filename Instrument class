@@ -1,0 +1,63 @@
+package com.company;
+import java.util.Random;
+public  abstract class Instrument {
+    public abstract void play();
+}
+
+class Piano extends Instrument
+{
+
+    @Override
+    public void play() {
+        System.out.println("Piano is playing tan tan tan tan ");
+    }
+}
+
+class Flute extends Instrument
+{
+    public void play()
+    {
+        System.out.println("Flute is playing toot toot toot toot ");
+    }
+}
+
+class Guitar extends Instrument
+{
+    public void play()
+    {
+        System.out.println("Guitar is playing tin tin tin");
+    }
+}
+
+class Test12
+{
+    public static void main(String[] args) {
+        Instrument arr[]=new Instrument[10];
+        Random rand = new Random();
+
+        for (int i = 0; i < 10; i++) {
+            int randomNum = rand.nextInt((3 - 1) + 1) + 1;
+
+            if (randomNum == 1)
+                arr[i] = new Piano();
+            else if (randomNum == 2)
+                arr[i] = new Flute();
+            else if (randomNum == 3)
+                arr[i] = new Guitar();
+
+            arr[i].play();
+        }
+
+        for(int i=0; i < 10; i++){
+            if(arr[i] instanceof Piano){
+                System.out.println("Piano is stored at index " + i);
+            } else if(arr[i] instanceof Guitar){
+                System.out.println("Flute is stored at index " + i);
+            } else if(arr[i] instanceof Flute){
+                System.out.println("Guitar is stored at index " + i);
+            }
+
+        }
+
+    }
+}
