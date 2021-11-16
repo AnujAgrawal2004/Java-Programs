@@ -1,0 +1,60 @@
+package com.company;
+
+public class Box {
+    private int length;
+    private int breath;
+    public Box()
+    {
+        length=0;
+        breath=0;
+    }
+    public Box(int l,int b)
+    {
+        length=l;
+        breath=b;
+    }
+    public void setval(int x,int y)
+    {
+        length=x;
+        breath=y;
+    }
+
+    public int area()
+    {
+        return (length*breath);
+    }
+}
+
+class Box3d extends Box {
+    private int height;
+
+    public Box3d() {
+        super();
+        height = 0;
+    }
+
+    public Box3d(int x, int y, int z) {
+        super(x, y);
+        height = z;
+    }
+
+    public void setval(int x, int y, int z) {
+        setval(x, y);
+        height = z;
+    }
+
+    public int volume() {
+        return (area() * height);
+    }
+}
+
+class Driver
+{
+    public static void main(String[] args) {
+        Box obj1=new Box();
+        obj1.setval(2,5);
+        Box3d obj2=new Box3d(2,5,8);
+        System.out.println(obj1.area());
+        System.out.println(obj2.volume());
+    }
+}
