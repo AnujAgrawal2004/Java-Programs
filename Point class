@@ -1,3 +1,8 @@
+/* Create class point with following instance variable and methods. 
+Instance variable: private int x,y
+Constructors : public Point(), Point(int x, int y)
+Methods : public void setX(int x), setY(int y), setXY(int x, int y) */
+
 package com.company;
 import java.util.*;
 public class Point {
