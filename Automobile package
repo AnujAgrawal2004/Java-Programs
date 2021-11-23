@@ -1,0 +1,158 @@
+/* Create a package called com.automobile. Define an abstract class called Vehicle. 
+Vehicle class has the following abstract methods: 
+public String getModelName() 
+public String getRegistrationNumber() 
+public String getOwnerName() 
+
+Create TwoWheeler subpackage under Automobile package
+Hero  class extends  Automobile.vehicle class 
+public int getSpeed() 
+– Returns the current speed of the vehicle.
+public void radio() 
+– provides facility to control the radio device 
+Honda class extends com.automobile.vehicle class
+public int getSpeed()
+– Returns the current speed of the vehicle.
+public void cdplayer() 
+– provides facility to control the cd player device which is available in the car.
+Create a test class to test the methods available in all these child class. */
+
+//Vehicle class
+
+package com.company.automobile;
+
+public abstract class Vehicle {
+    String model,registration,owner;
+    public abstract String getModelName(String model);
+
+    public abstract String getRegistrationNumber(String registration);
+
+    public abstract String getOwnerName(String owner);
+}
+
+//Hero class
+
+package com.company.automobile.TwoWheeler;
+
+import com.company.automobile.Vehicle;
+
+public class Hero extends Vehicle{
+    int speed,channel;
+    String model,registration,owner;
+    public Hero(String model, String registration, String owner)
+    {
+        this.model=model;
+        this.registration=registration;
+        this.owner=owner;
+    }
+    public int getSpeed(int speed)
+    {
+        return speed;
+    }
+    public void radio(int channel)
+    {
+    System.out.println(channel+" is currently playing ");
+    }
+
+    @Override
+    public String getModelName(String model) {
+        return model;
+    }
+
+    @Override
+    public String getRegistrationNumber(String registration) {
+        return model;
+    }
+
+    @Override
+    public String getOwnerName(String owner) {
+        return model;
+    }
+}
+
+//Honda class
+
+package com.company.automobile.TwoWheeler;
+
+import com.company.automobile.Vehicle;
+
+public class Honda extends Vehicle {
+    int speed;
+    String song;
+    String model,registration,owner;
+   public Honda(String model,String registration,String owner)
+    {
+        this.model=model;
+        this.registration=registration;
+        this.owner=owner;
+    }
+
+
+    public int getspeed(int speed)
+    {
+        System.out.println("current speed is ");
+        return speed;
+    }
+    public void cdplayer(String ch)
+    {
+        song=ch;
+        System.out.println(song+" is currently playing");
+    }
+
+    @Override
+    public String getModelName(String model) {
+        return model;
+    }
+
+    @Override
+    public String getRegistrationNumber(String registration) {
+        return registration;
+    }
+
+    @Override
+    public String getOwnerName(String owner) {
+        return owner;
+    }
+}
+
+//Driver class
+
+package com.company.automobile;
+import java.util.*;
+import com.company.automobile.TwoWheeler.Hero;
+import com.company.automobile.TwoWheeler.Honda;
+
+public class Test {
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter model name,registration no,owner name");
+        String m1,r1,o1;
+        m1=s.nextLine();
+        r1=s.nextLine();
+        o1=s.nextLine();
+        Hero hero=new Hero(m1,r1,o1);
+
+        System.out.println(hero.getModelName(m1));
+        System.out.println(hero.getRegistrationNumber(r1));
+        System.out.println(hero.getOwnerName(o1));
+        System.out.println("Enter the speed");
+        System.out.println("Enter the channel number to be played on radio ");
+        System.out.println(hero.getSpeed(s.nextInt()));
+        hero.radio(s.nextInt());
+
+
+        String m2,r2,o2;
+        System.out.println("Enter model name,registration number,owner name");
+        m2=s.nextLine();
+        r2=s.nextLine();
+        o2=s.nextLine();
+        Honda honda=new Honda(m2,r2,o2);
+        System.out.println(honda.getModelName(m2));
+        System.out.println(honda.getRegistrationNumber(r2));
+        System.out.println(honda.getOwnerName(o2));
+        System.out.println("Enter the speed");
+        System.out.println("Enter the song you want to play");
+        System.out.println(honda.getspeed(s.nextInt()));
+        honda.cdplayer(s.nextLine());
+    }
+}
