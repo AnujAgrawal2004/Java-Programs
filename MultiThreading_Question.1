@@ -1,0 +1,32 @@
+/*
+Create two threads and assign names ‘Scooby’ and ‘Shaggy’ to the two threads. Display both thread names.
+*/
+
+class MyThread1 extends Thread
+{
+    public void run()
+    {
+        System.out.println(Thread.currentThread().getName());
+    }
+}
+
+class MyThread2 extends Thread
+{
+    public void run()
+    {
+        System.out.println(Thread.currentThread().getName());
+    }
+}
+
+public class Multi1
+{
+    public static void main(String[] args) {
+        MyThread1 obj1=new MyThread1();
+        obj1.setName("Scooby");
+        obj1.start();
+
+        MyThread2 obj2=new MyThread2();
+        obj2.setName("Shabby");
+        obj2.start();
+    }
+}
